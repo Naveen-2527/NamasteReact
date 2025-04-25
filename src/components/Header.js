@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
-
+import { Link } from "react-router-dom";
  
 const Header=()=>{
  const[btnName,setBtnName]=useState("Login")
@@ -14,9 +14,11 @@ const Header=()=>{
       <img className="logo" src={LOGO_URL}/>
       <div className="nav-items">
       <ul>
-        <li>home</li>
-        <li>About us</li>
-        <li>Contact us</li>
+        <li><Link to="/">home</Link></li>
+        <li><Link to="/about" >About us</Link>
+          </li>
+        <li><Link to="/contact"> Contact us</Link>
+         </li>
         <li>Cart</li>
         <button onClick={()=>{
          (btnName==="Login")?setBtnName("Logout"):setBtnName("Login");
